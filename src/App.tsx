@@ -1,26 +1,15 @@
-import { useState } from 'react';
+import { Suspense } from 'react';
+import routes from '~react-pages';
 import './App.css';
-import { HashRouter, Route, Router, Routes } from 'react-router-dom';
-import Home from './pages/Home';
+import Sidebar from './components/home/Sidebar';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+    <div className="bg-slate-700">
+      <Suspense fallback={<p>Loading...</p>}>{useRoutes(routes)}</Suspense>
+      <Sidebar />
     </div>
   );
 }
 
-function Wrapper() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
-  );
-}
-export default Wrapper;
+export default App;
