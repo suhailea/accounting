@@ -1,18 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from 'react';
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
@@ -46,19 +31,12 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
+      {}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
@@ -153,7 +131,7 @@ export default function Example() {
         {/* Static sidebar for desktop */}
         <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex flex-grow flex-col overflow-y-auto bg-indigo-700 pt-5">
+          <div className="flex flex-grow flex-col overflow-y-auto bg-white pt-5">
             <div className="flex flex-shrink-0 items-center px-4">
               <img
                 className="h-8 w-auto"
@@ -169,13 +147,13 @@ export default function Example() {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? 'bg-indigo-800 text-white'
-                        : 'text-indigo-100 hover:bg-indigo-600',
+                        ? 'bg-blue-200 text-black'
+                        : 'text-black hover:bg-blue-100',
                       'group flex items-center rounded-md px-2 py-2 text-sm font-medium'
                     )}
                   >
                     <item.icon
-                      className="mr-3 h-6 w-6 flex-shrink-0 text-indigo-300"
+                      className="mr-3 h-6 w-6 flex-shrink-0 text-black"
                       aria-hidden="true"
                     />
                     {item.name}
